@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         TERRAFORM_WORKSPACE = "/var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash_Terraform/"
-        INSTALL_WORKSPACE = "/var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash-tool/"
+        INSTALL_WORKSPACE = "/var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash_install/"
     }
     stages {
         stage('Clone Repository') {
@@ -76,7 +76,7 @@ pipeline {
             }
             steps {
                 // Deploy logstash
-                sh '''cd /var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash-tool/
+                sh '''cd /var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash_install/
                 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook playbook.yml    '''
             }
         }
