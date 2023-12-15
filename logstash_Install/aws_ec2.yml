@@ -1,7 +1,7 @@
 ---
 plugin: aws_ec2
 regions:
-  - ap-northeast-1
+  - eu-west-3
 # hostnames:
 #   - ip-address
 include_filters:
