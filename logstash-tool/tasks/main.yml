@@ -1,0 +1,16 @@
+
+##--------------- Ubuntu ---------------##
+##--------------- Installation file ---------------##
+
+- name: Install Logstash on ubuntu
+  include_tasks: install_ubuntu.yml
+  tags: 
+    - install_logstash_ubuntu
+
+ ##--------------- change_config_file ---------------##
+
+- name: change config yaml for ubuntu
+  include_tasks: ubuntu_config.yml
+  tags: 
+    - change_ubuntu_config
+

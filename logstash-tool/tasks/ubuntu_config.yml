@@ -1,0 +1,16 @@
+---
+# Replace logstash config file into server
+- name: Create Logstash configuration files.
+  template:
+    src: "{{ item.name }}"
+    dest: "{{ item.path }}"
+  with_items:
+    - { name: 'logstash.yml.j2', path: '/etc/logstash/logstash.yml' }
+
+## JVM options file
+- name: Create Logstash JVM-Options configuration files.
+  template:
+    src: "jvm.options.j2"
+    dest: "/etc/logstash/jvm.options"
+  notify:
+    - restart logstash

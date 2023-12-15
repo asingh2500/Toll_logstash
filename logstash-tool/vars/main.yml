@@ -1,0 +1,6 @@
+---
+# vars file for logstash-tool
+
+logstash_version: "8.x"
+logstash_package: logstash
+ubuntu_java_apt_package: openjdk-11-jdk
