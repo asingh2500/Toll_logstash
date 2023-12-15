@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/vishalkk2805/Tool_Postgresql.git'
+                git branch: 'main', url: 'https://github.com/asingh2500/Toll_logstash.git'
             }
         } 
         stage('Terraform Init') {
