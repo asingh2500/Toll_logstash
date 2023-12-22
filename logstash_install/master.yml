@@ -5,7 +5,8 @@
 #   - role: /home/ubuntu/logstash-role/logstash-tool
 
 ---
-- hosts: logstash
+- hosts: tag_data_logstash
+  remote_user: ubuntu
   become: yes
   gather_facts: yes
   roles:
