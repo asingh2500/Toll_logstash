@@ -8,5 +8,5 @@ include_filters:
 # This includes everything in the inventory that has the following tags.
 # - tag:DB:   #Format Multiple Tags Use.
 #     - 'pg'
-- tag:type:   
+- tag:data:   
     - 'logstash'
