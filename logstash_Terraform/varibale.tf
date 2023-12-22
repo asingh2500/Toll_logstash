@@ -32,7 +32,7 @@ variable "pub_instance_name" {
 }
 variable "pvt_instance_name" {
   type = list(string)  
-  default = ["logstash-Master","logstash-Slave"]  
+  default = ["logstash-01","logstash-02"]  
 }
 variable "igwname" {
   type = string   
@@ -60,5 +60,5 @@ variable "seqgrp" {
 }
 variable "keyname" {
   type = string
-  default = "paris-ubuntu.pem"
+  default = "paris.pem"
 }
