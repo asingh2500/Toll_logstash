@@ -45,8 +45,8 @@ pipeline {
                 sh """
                     cd ${env.TERRAFORM_WORKSPACE}
                     terraform apply -auto-approve
-                    sudo cp ${env.TERRAFORM_WORKSPACE}/paris-ubuntu.pem ${env.INSTALL_WORKSPACE}
-                    sudo chmod 400 ${env.INSTALL_WORKSPACE}/paris-ubuntu.pem
+                    sudo cp ${env.TERRAFORM_WORKSPACE}/paris.pem ${env.INSTALL_WORKSPACE}
+                    sudo chmod 400 ${env.INSTALL_WORKSPACE}/paris.pem
                 """       
             }
         }
