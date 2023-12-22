@@ -60,5 +60,5 @@ variable "seqgrp" {
 }
 variable "keyname" {
   type = string
-  default = "paris"
+  default = "paris.pem"
 }
