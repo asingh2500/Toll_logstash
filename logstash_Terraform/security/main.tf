@@ -71,22 +71,22 @@ resource "aws_instance" "private-ec2" {
   }
 }
 
-# Genrate Key
-resource "tls_private_key" "rsa_4096" {
+
+
+/*--------------- Key Pair ---------------*/
+
+resource "aws_key_pair" "key_pair" {
+  key_name   = var.key_name
+  public_key = tls_private_key.rsa.public_key_openssh
+}
+resource "tls_private_key" "private_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
-
-# Genrate pen Key 
-resource "aws_key_pair" "key_pair" {
-  key_name   = var.key_name
-  public_key = tls_private_key.rsa_4096.public_key_openssh
-}
-
-# pem Key download in sysytem
-resource "local_file" "private_key" {
-  content = tls_private_key.rsa_4096.private_key_pem
-  filename = var.key_name
+resource "local_file" "key-01" {
+  content         = tls_private_key.rsa.private_key_pem
+  file_permission = "0400"
+  filename        = "${var.key_name}.pem"
 }
 
 
