@@ -45,8 +45,7 @@ pipeline {
                 sh """
                     cd ${env.TERRAFORM_WORKSPACE}
                     terraform apply -auto-approve
-                    sudo cp ${env.TERRAFORM_WORKSPACE}paris.pem ${env.INSTALL_WORKSPACE}
-                    sudo chmod 400 ${env.INSTALL_WORKSPACE}paris.pem
+                    
                 """       
             }
         }
@@ -77,7 +76,7 @@ pipeline {
             steps {
                 // Deploy logstash
                 sh '''cd /var/lib/jenkins/workspace/logstash_Infra_Deploy/logstash_install/
-                ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook playbook.yml    '''
+                ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook master.yml    '''
             }
         }
 
