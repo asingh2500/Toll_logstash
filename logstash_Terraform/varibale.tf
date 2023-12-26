@@ -52,7 +52,7 @@ variable "private_rt_names" {
 }
 variable "instancetype" {
   type = string   
-  default = "t2.medium"
+  default = "t2.micro"
 }
 variable "seqgrp" {
   type = string   
